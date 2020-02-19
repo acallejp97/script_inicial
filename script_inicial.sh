@@ -64,8 +64,9 @@ sudo apt update
 sudo apt -y install grub-customizer
 sudo add-apt-repository --remove ppa:danielrichter2007/grub-customizer
 
-##################### Tor Browser ###########################
-sudo apt -y install torbrowser-launcher
+##################### Tor Browser(Debian) ###########################
+sudo echo "deb http://deb.debian.org/debian buster-backports main contrib" > /etc/apt/sources.list.d/buster-backports.list
+sudo apt install torbrowser-launcher -t buster-backports
 
 ##################### Composer ###########################
 EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
@@ -94,27 +95,7 @@ code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension firefox-devtools.vscode-firefox-debug
 code --install-extension ms-vscode.vs-keybindings
 
-code --enable-proposed-api ms-vscode.cpptools
-code --enable-proposed-api formulahendry.code-runner
-code --enable-proposed-api msjsdiag.debugger-for-chrome
-code --enable-proposed-api eamodio.gitlens
-code --enable-proposed-api zignd.html-css-class-completion
-code --enable-proposed-api onecentlin.laravel-blade
-code --enable-proposed-api felixfbecker.php-debug
-code --enable-proposed-api bmewburn.vscode-intelephense-client
-code --enable-proposed-api felixfbecker.php-intellisense
-code --enable-proposed-api kokororin.vscode-phpfmt
-code --enable-proposed-api esbenp.prettier-vscode
-code --enable-proposed-api christian-kohler.path-intellisense
-code --enable-proposed-api ms-python.python
-code --enable-proposed-api cymonk.sql-formatter
-code --enable-proposed-api dotjoshjohnson.xml
-code --enable-proposed-api tomoki1207.pdf
-code --enable-proposed-api redhat.vscode-yaml
-code --enable-proposed-api shd101wyy.markdown-preview-enhanced
-code --enable-proposed-api firefox-devtools.vscode-firefox-debug
-code --enable-proposed-api ms-vscode.vs-keybindings
-
+################### Clean download files ################################3
 rm GitHubDesktop-linux-2.3.1-linux1.deb
 rm packages.microsoft.gpg
 rm google-chrome-stable_current_amd64.deb
