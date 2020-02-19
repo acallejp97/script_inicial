@@ -115,6 +115,9 @@ code --enable-proposed-api shd101wyy.markdown-preview-enhanced
 code --enable-proposed-api firefox-devtools.vscode-firefox-debug
 code --enable-proposed-api ms-vscode.vs-keybindings
 
+rm GitHubDesktop-linux-2.3.1-linux1.deb
+rm packages.microsoft.gpg
+rm google-chrome-stable_current_amd64.deb
 
 if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]
 then
